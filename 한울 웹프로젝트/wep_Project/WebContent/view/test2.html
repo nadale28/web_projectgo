@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<head>
+<title>일시후원</title>
+<link href="/css/style.css?v=150825" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="/favicon.ico?v=141108" />
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+ <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+
+
+
+
+
+<script type="text/javascript"	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// donation price box
+		$("#support_donationprice").change(function() {
+			if ($(this).val() == "custom") {
+				$('#support_donationprice_custom').fadeIn("slow");
+				$(this).css("width", "76px");
+				$('#once_countbox').css("width", "179px");
+				$('#support_donationprice_custom').focus();
+			} else {
+				$(this).css("width", "120px");
+				$('#support_donationprice_custom').fadeOut("slow", function() {
+					$('#once_countbox').css("width", "126px");
+				});
+			}
+		});
+	});
+	function close_support_popup(preserve) {
+
+		$('.layer_popup_bg').hide();
+		$('#pu_support').fadeOut();
+
+		if (preserve != "1") {
+			setTimeout(
+					function() {
+
+						if (g_sup_donationtarget == "1") {
+							document.getElementById("support_child_id").value = g_sup_childid;
+							document.getElementById("support_child_name").innerHTML = g_sup_givenname;
+							document.getElementById("support_child_age").innerHTML = g_sup_age;
+							document.getElementById("support_child_gender").innerHTML = g_sup_genderdesc;
+							document
+									.getElementById("support_child_filepath")
+									.setAttribute(
+											"style",
+											"background:url('"
+													+ g_sup_filepath
+													+ "') no-repeat center 0%;background-size:cover;height:117px;width:117px;overflow:hidden;");
+							document.getElementById("support_child_country").innerHTML = g_sup_country;
+							document.getElementById("support_child_adp").innerHTML = g_sup_adp;
+						} else if (g_sup_donationtarget == "2") {
+							document.getElementById("support_donationprice").value = "5,000";
+							//document.getElementById("support_donationprice").innerHTML = ((g_sup_donationtype == "1") ? "월 " : "") + make_price_format(g_sup_unitprice) + "원";
+						}
+
+						document.getElementById("co_write_sponsor").value = "";
+						document.getElementById("pu_support_cb").checked = false;
+
+					}, 300);
+		}
+	}
+</script>
+
+<style>
+.title_01{}
+.form{border: 5px solid #87cefa; width:440px; padding:0 30px 10px 30px; display:none; position:fixed; top:90px; left:400px;}
+.pop_01{position:fixed; top:110px; left:870px;}
+.pu_support{margin-bottom:10px}
+.num {position:relative; left:380px; top:0px}
+.font{margin-bottom:10px}
+.title{text-align:center;}
+.img{margin-top:20px; text-align:center; background:#e6e6fa width: 440px}
+#support_donation_object_info{
+overflow:hidden;
+}
+#support_donationprice_prefix{
+float:right;
+}
+.bt_close{float:right}}
+.title {}
+.tb_reco-child{border : 1px solid orange}
+</style>
+
+<script>
+$(document).ready(function(){
+
+$('#button').click(function(){
+
+		$('.form').css('display','block');
+		});
+	
+	$('#pop').click(function(){
+		$('.form').css('display','none');
+		});
+
+
+});
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+ <input type="button" id="button"  value="화긴" style = "width : 200px; height: 200px;" />
+
+
+
+
+
+<div>
+		<img style="height: 25px; width: 25px;" src="../img/pop_01.jpg" class="pop_01" ; id="pop"> 
+	</div>
+
+		<!-- <a href="#self" id="bt_pu_support_close" class="bt_close"
+			onclick="close_support_popup()">닫기</a>
+ --><div class = "title">
+			<h4 class="title_01">후원하기
+		</div>
+	<div class="layer_popup size03 pu_support_wrap" id="pu_support">
+		
+		<div class="pu_support">
+			<div id="pu_support_goods" name="pu_support_goods">
+				<p>후원 대상 정보</p>
+				<div>
+					<span  class="num">
+					<img style="height: 15px; width: 15px;" src="../img/1.gif">
+					<img style="height: 10px; width: 10px;" src="../img/right.gif">
+					<img style="height: 15px; width: 15px;" src="../img/2_01.gif">
+
+					</span>
+				<div>
+			</div>
+			
+			<div class="reco-child" style="margin-bottom: 10px;">
+				<table class="tb_reco-child"  width="430" >
+					<caption></caption>
+					<colgroup>
+						<col width="0px;" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<td class="ph"><img style="height: 150px; width: 150px;"
+								src="../img/yun1.png" alt="" id="support_itempicture"
+								name="support_itempicture"/></td>
+							<td class="info">
+								<ul
+									style="display: table; margin-left: 0px; line-height: 28px;">
+									<li class="sponsor"><div><font size="2">프로젝트 : 연탄 배달 봉사&nbsp;</font></div>
+										<div id="support_projectname" name="support_projectname"></div></li>
+									<li class="sponsor"><div><font size="2">후원대상 : 어려운 사람들&nbsp;</font></div>
+										<div id="support_iteminfo" name="support_iteminfo"></div></li>
+									<li class="sponsor price">
+									<div id="support_donation_object_info"><font size="2">후원금액 : </font>&nbsp;
+										<div id="support_donationprice_prefix" name="support_donationprice_prefix">
+										<span id="once_countbox" class="count-box"> 
+										<select id="support_donationprice" name="support_donationprice">
+												<option value="">선택</option>
+												<option value="1,000">1,000</option>
+												<option value="2,000">2,000</option>
+												<option value="3,000">3,000</option>
+												<option value="5,000">5,000</option>
+												<option value="10,000">10,000</option>
+												<option value="20,000">20,000</option>
+												<option value="30,000">30,000</option>
+												<option value="50,000">50,000</option>
+												<option value="100,000">100,000</option>
+												<option value="custom">직접입력</option>
+										</select> <label for="support_donationprice"></label> <input
+											type="text" id="support_donationprice_custom"
+											name="support_donationprice_custom" value="" maxlength="12"
+											onkeydown="keep_price_format(this)"
+											onkeyup="keep_price_format(this);"
+											onblur="keep_price_format(this);"
+											onmousedown="keep_price_format(this);" style="display: none;" />
+											<!--<span class="arrow"><a href="javascript:change_donationprice('up')">증가</a><a href="javascript:change_donationprice('down')">감소</a></span>-->
+									</span>
+									<span id="support_donationprice_tail" style="vertical-align: top;">원</span>
+									</div> 
+									</div>
+									</li>
+									
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<font class="font" size="2", color="gray">* 월드비전 아이디로 로그인하시면 더 편리한 후원이 가능합니다. <br>
+ 						또한,	 홈페이지에서 본인의 후원내역을 확인하실 수 있습니다.  </font>
+	
+
+
+			<div id="pu_support_designated_item"
+				name="pu_support_designated_item" style="display: none">
+				<p class="tr mt6"></p>
+			</div>
+		</div>
+		<div class="bot_btn" id="pu_support_btn_nologin"
+			name="pu_support_btn_nologin">
+			<!-- style="display:none" -->
+
+				<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=ZTLRVGRXL6MTY" 
+    data-button="PayNow" 
+    data-name="사랑의연탄" 
+    data-quantity="1" 
+    data-amount="1" 
+    data-currency="USD" 
+    data-shipping="0" 
+    data-tax="0" 
+    data-callback="main.do" 
+    data-env="sandbox"
+    data-charset="UTF-8"
+></script>
+		</div>
+	</div>
+
+</div>
+
+</div>
+	<!--  <p style="text-align:justify"><span style="color:#FF8C00"><span style="font-size:18px"> -->
+</body>
+</html>

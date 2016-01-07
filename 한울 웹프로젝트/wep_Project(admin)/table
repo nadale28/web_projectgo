@@ -1,0 +1,105 @@
+--정기후원 테이블 생성--
+create table sponsor(
+id varchar2(20) ,
+dona varchar(5),
+name varchar2(20),
+jumin1 number(20),
+jumin2 number(20),
+phone1 varchar2(4),
+phone2 varchar2(4),
+phone3 varchar2(4),
+front_email varchar(20),
+mid_email varchar(20),
+addr_01 varchar(50),
+addr_02 varchar(50),
+
+card_com varchar(20),
+card_num_01 varchar(8),
+card_num_02 varchar(8),
+card_num_03 varchar(8),
+card_num_04 varchar(8),
+card_year_01 number(4),
+card_year_02 number(4),
+card_own varchar2(20),
+
+bank_com varchar(20),
+bank_month number(5), 
+bank_num  varchar(30),
+bank_own varchar2(20),
+bank_birth_01 number(4),
+bank_birth_02 number(4),
+bank_birth_03 number(4),
+
+tax_num1 number(10),
+tax_num2 number(10),
+
+writeday date default sysdate,
+constraint phone_sponsor_pk primary key (phone1,phone2,phone3)
+);
+
+--지역코드 테이블--
+drop table region_code;
+create  table region_code(
+region1 varchar2(15), 
+region2 varchar2(15), 
+city1 varchar2(50),
+city2 varchar2(50),
+constraint region_pk PRIMARY KEY (region1,region2)
+);
+
+--게시판테이블 생성--
+create table notice_board
+(num number(6) ,
+region_total varchar2(20),
+title varchar2 (50), 
+content varchar2(100),
+start_day date, 
+end_day date, 
+reg_people number(15), 
+rec_people number(15),
+author varchar2(40),
+readcnt number(15) default 0,
+constraint num_notice_pk primary key (num)
+);
+--시퀸스만들기--
+create sequence notice_board_seq;
+
+--------회원가입 정보 테이블------- 
+create table members(
+id varchar2(12) not null primary key,
+passwd varchar2(12) not null,
+name varchar2(10) not null,
+jumin1 varchar2(6) not null,
+jumin2 varchar2(7) not null,
+email varchar2(30),
+blog varchar2(50),
+reg_date date default sysdate,
+zipcode varchar2(7),
+address varchar2(30)
+);
+
+--member 컬럼값교체----
+alter table members
+modify(ID	VARCHAR2(20),
+PASSWD	VARCHAR2(20),
+NAME	VARCHAR2(20),
+JUMIN1	VARCHAR2(6),
+JUMIN2	VARCHAR2(7),
+EMAIL	VARCHAR2(50),
+BLOG	VARCHAR2(50),
+ZIPCODE	VARCHAR2(15),
+ADDRESS	VARCHAR2(50));
+commit;
+--member add 컬럼
+alter table members
+add( phone1 varchar2(4),
+phone2 varchar2(4),
+phone3 varchar2(4));
+commit;
+
+--admin_info--
+create table members(
+id varchar2(15) not null primary key,
+name varchar2(20),
+password varchar2(12)
+);

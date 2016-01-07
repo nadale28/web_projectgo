@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		var c=0;
+		$('.chk_all').click(function(){
+			if($('.chk_all').is(':checked')){
+				$('.chk_box').prop('checked',true);			
+			}
+			else
+			{ 
+				$('.chk_box').prop('checked',false);
+			}			
+		});
+		
+		$('.submit').click(function(){
+			if($('.service').is(':checked') && $('.privacy').is(':checked')){
+				var url="join.html";
+				$(location).attr('href',url);
+			}else{
+				alert("이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.")}
+
+		});
+
+		$('.cancel').click(function(){
+				var url="http://naver.com";
+				$(location).attr('href',url);
+		});
+		
+	});
+  </script>
+  <style>
+	 *{margin: 0 auto; text-decoration: none; list-style: none; }
+	 .header {width: 900px; height: 168px; border: 1px solid black;}
+	 .container {height: 702px; border: 1px solid black;}
+	 .footer {height: 88px; border: 1px solid black;}
+
+	 .header > h1 {width: 900px; height: 168px; line-height: 168px; text-align:center ; font-size: 50px;}
+	
+	 .join_content {border: 1px solid black;}
+	 .join_chk_all {height:100%; width:458px; border: 1px solid black; padding:15px; box-sizing: border-box; overflow:hidden;}
+	 .terms_list {width:458px; height: 100%; border: 1px solid black; padding:0; box-sizing: border-box;}
+	 .terms {width:100%; border: 1px solid black; padding: 15px;box-sizing: border-box;}
+	 .input_chk {height:100%; padding-bottom:5px;}
+	 .terms_box {width: 428px; height: 88px; border: 1px solid black;box-sizing: border-box; overflow:scroll;}
+	 .chk_box {float:right;width:50px; }
+	 p {float:left; width: 100%}
+	 .sub-box{border: 1px solid black; width:458px; box-sizing: border-box;}
+	 a {display:none;}
+   </style>
+ </head>
+
+ <body>
+  <div class="header"><h1>약관</h1></div>
+  <div class="container">
+	<div class="join_cotent">
+		<div class="join_chk_all">
+			<p>이용약관, 개인정보 수집 및 이용,<br>
+			   위치정보 이용약관(선택), 프로모션 안내<input class="chk_all chk_box" type="checkbox" name="chk_all" /><br>
+			   메일 수신(선택)에 모두 동의합니다.<br></p>
+			
+		</div>
+		<ul class="terms_list">
+			<li class = "terms ">
+				<span class="input_chk ">이용약관 동의(필수)<input class="chk_box service" type="checkbox" name="chk_all" /></span>
+				<div class="terms_box">제 1 조 (목적)
+</div>
+			</li>
+			<li class = "terms ">
+				<span class="input_chk">개인정보 수집 및 이용에 대한 안내(필수)<input class="chk_box privacy" type="checkbox" name="chk_all" /></span>
+				<div class="terms_box">정보통신망법 규정에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+</div>
+			</li>
+			<li class = "terms">
+				<span class="input_chk">위치정보 이용약관 동의(선택)<input class="chk_box" type="checkbox" name="chk_all" /></span>
+				<div class="terms_box">위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
+
+</div>
+			</li>
+			<li class = "terms">
+				<span class="input_chk">이벤트 등 프로모션 알림 메일 수신(선택)
+				<input class="chk_box" type="checkbox" name="chk_all" /></span>				
+			</li>
+		</ul>
+
+		<div class="sub-box">
+		<label for="sub">
+			<input id="sub" class="submit" type="submit" name="submit" value="동의"/> 
+		</label>		
+			<input class="cancel" type="submit" name="cancel" value="비동의"/>
+		</div>
+	</div>
+  </div>
+  <div class="footer"></div>
+ </body>
+</html>

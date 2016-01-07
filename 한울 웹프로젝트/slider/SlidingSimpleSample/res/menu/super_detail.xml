@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<menu xmlns:android="http://schemas.android.com/apk/res/android">
+		<item
+			android:showAsAction="always"
+			android:id="@+id/save"
+			android:icon="@drawable/ic_action_save"
+			android:title="Add"
+			android:orderInCategory="103"
+		/>
+		<item
+			android:showAsAction="always"
+			android:id="@+id/camera"
+			android:icon="@drawable/ic_action_camera"
+			android:title="Add"
+			android:orderInCategory="103"
+		/>
+		<item
+			android:showAsAction="always"
+			android:id="@+id/gal"
+			android:icon="@drawable/ic_action_new_picture"
+			android:title="Add"
+			android:orderInCategory="103"
+		/>
+		<item
+			android:showAsAction="always"
+			android:id="@+id/record"
+			android:icon="@drawable/ic_action_mic"
+			android:title="Add"
+			android:orderInCategory="103"
+		/>
+		
+
+	</menu>

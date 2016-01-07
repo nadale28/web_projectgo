@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.worldvision.or.kr/campaign/2015/pop_happyanding.asp -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<!-- BASIC META -->
+
+<meta http-equiv="Cache-Control" content="No-store, No-cache, Must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Content-Language" content="ko">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="index,follow">
+<meta http-equiv="keywords" content="월드비전, 월드비젼, 아동후원, 아동결연, 긴급구호, 나눔, 후원">
+<meta name="description" content="Happy Anding.월드비전은 전 세계 100여 개 국에서 1억 명 지구촌 이웃들을 돕는 국제구호개발 NGO입니다.">
+<meta name="copyright" content="World Vision Korea">
+
+<!-- FaceBook -->
+<meta property="og:image" content="http://www.worldvision.or.kr/images/wvlogo_2.jpg">
+<meta property="og:site_name" content="WorldVision Korea">
+<meta property="og:title" content="[월드비전] Happy Anding">
+<meta property="og:description" content="Happy Anding\n\n월드비전은 전 세계 100여 개 국에서 1억 명 지구촌 이웃들을 돕는 국제구호개발 NGO입니다. ">
+<meta property="og:url" content="http://www.worldvision.or.kr/campaign/2015/happyanding.asp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=yes, width=1200px">
+<link rel="stylesheet" type="text/css" href="base(1).css">
+<link rel="stylesheet" type="text/css" href="util(1).css">
+<link rel="stylesheet" type="text/css" href="happyanding(1).css">
+
+
+<script type="text/javascript" src="jquery-1.9.1.min(1).js"></script>
+<script language="javascript" type="text/javascript" src="common.js"></script>
+
+
+<script type="text/javascript">
+
+
+</script>
+<title>[월드비전] Happy Anding</title>
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/common/js/iePNG.js"></script>
+<script type="text/javascript">
+// 1101 png24
+DD_belatedPNG.fix('.peopleNum');
+DD_belatedPNG.fix('img');
+</script>
+<![endif]-->
+<script language="javascript">
+<!--
+
+function setPng24(obj) {
+	//alert(navigator.appVersion);
+	if (navigator.appVersion.indexOf("MSIE 6") > -1 ) {
+		obj.width=obj.height=1;
+		obj.className=obj.className.replace(/\bpng24\b/i,'');
+		obj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');"
+		obj.src='';
+		return '';
+	}
+}
+
+	function goScroll(obj) {
+		$('html, body').stop().animate({ 'scrollTop': obj.offset().top }, 400, 'swing');
+	}
+
+
+
+	function viewAgree(num) {
+		if (num == 1) {
+			$('#agree2_view').hide(500);
+		//	$('#agree3_view').hide(500);
+			if ($('#agree1_view').css("display") == "none") {
+				$('#agree1_view').show(500);
+			} else {
+				$('#agree1_view').hide(500);
+			}
+		} else if (num == 2) {
+			$('#agree1_view').hide(500);
+		//	$('#agree3_view').hide(500);
+			if ($('#agree2_view').css("display") == "none") {
+				$('#agree2_view').show(500);
+			} else {
+				$('#agree2_view').hide(500);
+			}
+		} else if (num == 3) {
+			$('#agree1_view').hide(500);
+			$('#agree2_view').hide(500);
+			if ($('#agree3_view').css("display") == "none") {
+				$('#agree3_view').show(500);
+			} else {
+				$('#agree3_view').hide(500);
+			}
+		}
+	}
+
+
+	function divHide(obj){
+		obj.animate({ opacity: 0 }, { duration: 150, complete: function () { obj.remove(); } });
+	}
+
+
+
+
+
+	function goAccount(){
+		var f = document.wbForm;
+
+		if(f.a_accountkind[1].checked == true) {
+
+			if( AllTrim(f.a_bankcompany.value) == "" ) { alert('은행명을 선택하세요.'); f.a_bankcompany.focus(); return false; }
+			if( f.a_banknumber.value.length < 2 ) { alert('은행계좌를 입력하세요.'); f.a_banknumber.focus();  return false; }
+			if( f.a_bankname.value.length < 2 ) { alert('예금주를 입력하세요.'); f.a_bankname.focus();    return false; }
+
+			if(f.a_verify.value == 0) 	{
+				if( confirm('자동이체 계좌검증을 하지 않으셨습니다.\n검증하지 않고 계속 진행하시겠습니까?') ) {
+				} else {
+					return false;
+				}
+			}
+
+
+			if ( f.chk_birth2.value != 1 ) {
+				alert("예금주 생년월일을 정확하게 입력하세요.");
+				f.a_birth_3.focus();
+				return false;
+			}
+		//	if ( chkCHAR(f.a_bankcompany) == false ) { alert("특수문자는 사용할 수 없습니다."); f.a_bankcompany.focus(); return false; }
+		//	if ( chkCHAR(f.a_banknumber) == false ) { alert("특수문자는 사용할 수 없습니다."); f.a_banknumber.focus(); return false; }
+			if ( chkCHAR(f.a_bankname) == false ) { alert("특수문자는 사용할 수 없습니다."); f.a_bankname.focus(); return false; }
+
+
+		} else {
+
+			if( AllTrim(f.a_cardcompany.value)=="") { alert('카드명을 선택하세요');   f.a_cardcompany.focus();    return false; }
+			if( f.a_cardnumber_1.value.length < 2 ) { alert("카드번호를 입력하세요."); f.a_cardnumber_1.focus(); return false; }
+			if( f.a_cardnumber_2.value.length < 2 ) { alert("카드번호를 입력하세요."); f.a_cardnumber_2.focus(); return false; }
+			if( f.a_cardnumber_3.value.length < 2 ) { alert("카드번호를 입력하세요."); f.a_cardnumber_3.focus(); return false; }
+			if( f.a_cardnumber_4.value.length < 1 ) { alert("카드번호를 입력하세요."); f.a_cardnumber_4.focus(); return false; }
+
+			if( f.a_cardname.value.length < 2 ) { alert('카드소유주를 입력하세요'); f.a_cardname.focus();   return false; }
+
+		//	if ( chkCHAR(f.a_cardcompany) == false ) { alert("특수문자는 사용할 수 없습니다."); f.a_cardcompany.focus(); return false; }
+			if ( chkCHAR(f.a_cardname) == false ) { alert("특수문자는 사용할 수 없습니다."); f.a_cardname.focus(); return false; }
+
+		}
+
+		return true;
+	}
+
+
+	function copyname() {
+		var f = document.wbForm;
+		if (f.copybtnbank.checked == true) {
+			f.a_bankname.value = f.m_name.value;
+			f.a_bankname.disabled = true;
+			f.a_birth_1.value = f.m_birth_1.value;
+			f.a_birth_2.value = f.m_birth_2.value;
+			f.a_birth_3.value = f.m_birth_3.value;
+			f.a_birth_1.disabled = true;
+			f.a_birth_2.disabled = true;
+			f.a_birth_3.disabled = true;
+			
+			document.getElementById("a_bankname").style.backgroundColor = "#E0E0E0";
+		//	document.getElementById("a_birth").style.display = "none";
+		} else {
+			f.a_bankname.value = "";
+			f.a_bankname.disabled = false;
+			f.a_birth_1.disabled = false;
+			f.a_birth_2.disabled = false;
+			f.a_birth_3.disabled = false;
+			document.getElementById("a_bankname").style.backgroundColor = "#FFFFFF";
+		//	document.getElementById("a_birth").style.display = "block";
+		}
+		if (f.copybtncard.checked == true) {
+			f.a_cardname.value = f.m_name.value;
+			f.a_cardname.disabled = true;
+			document.getElementById("a_cardname").style.backgroundColor = "#E0E0E0";
+		} else {
+			f.a_cardname.value = "";
+			f.a_cardname.disabled = false;
+			document.getElementById("a_cardname").style.backgroundColor = "#FFFFFF";
+		}
+	}
+
+
+	function goNext() {
+		var regEmail=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+		var f = document.wbForm;
+
+		if ( f.s_support[0].checked == false && f.s_support[1].checked == false && f.s_support[2].checked == false ) {
+			alert("후원종류를 선택해주세요.");
+			return false;
+		}
+
+		if ( f.m_name.value.length < 2 ) {
+			alert("이름을 입력하세요.");
+			f.m_name.focus();
+			return false;
+		}
+
+		if ( chkCHAR(f.m_name) == false ) { alert("특수문자는 사용할 수 없습니다."); f.m_name.focus(); return false; }
+
+		if ( f.chk_birth.value != 1 ) {
+			alert("생년월일을 정확하게 입력하세요.");
+			f.m_birth_3.focus();
+			return false;
+		}
+
+		if (f.m_mobile1.value.length < 1 ) {
+			alert("휴대전화를 입력하세요.");
+			f.m_mobile1.focus();
+			return false;
+		}
+		if (f.m_mobile2.value.length < 1 ) {
+			alert("휴대전화를 입력하세요.");
+			f.m_mobile2.focus();
+			return false;
+		}
+		if ( chkCHAR(f.m_mobile2) == false ) { alert("특수문자는 사용할 수 없습니다."); f.m_mobile2.focus(); return false; }
+		if (f.m_mobile3.value.length < 1 ) {
+			alert("휴대전화를 입력하세요.");
+			f.m_mobile3.focus();
+			return false;
+		}
+		if ( chkCHAR(f.m_mobile3) == false ) { alert("특수문자는 사용할 수 없습니다."); f.m_mobile3.focus(); return false; }
+
+
+		var email = f.m_mail1.value + "@" + f.m_mail2.value;
+		if( email.length < 3 ) {
+			alert("이메일을 입력하세요.");
+			f.m_mail1.focus();
+			return false;
+		} else if (regEmail.test(email) === false) {
+			alert("유효한 이메일 형식이 아닙니다.");
+			f.m_mail1.focus();
+			return false;
+		}
+	//	if ( chkCHAR(f.m_mail1) == false ) { alert("특수문자는 사용할 수 없습니다."); f.m_mail1.focus(); return false; }
+	//	if ( chkCHAR(f.m_mail2) == false ) { alert("특수문자는 사용할 수 없습니다."); f.m_mail2.focus(); return false; }
+
+
+		if (f.m_addr1.value.length < 2) {
+			alert("주소를 정확하게 입력하세요.");
+			f.m_addr1.focus();
+			return false;
+		}
+		if (f.m_addr2.value.length < 2) {
+			alert("주소를 정확하게 입력하세요.");
+			f.m_addr2.focus();
+			return false;
+		}
+		if (f.m_addr3.value.length < 2) {
+			alert("주소를 정확하게 입력하세요.");
+			f.m_addr3.focus();
+			return false;
+		}
+		if ( chkCHAR(f.m_addr3) == false ) { alert("특수문자는 사용할 수 없습니다."); f.m_addr3.focus(); return false; }
+
+		if( goAccount() == false ) return false;
+
+		if(!f.agree1.checked){
+			alert('후원신청을 위한 개인정보 수집·이용에 동의하셔야 합니다. ');
+			f.agree1.focus();
+			return false;
+		}
+
+
+		if (f.s_jumin_chk[0].checked == true ) {
+			if (f.s_jumin1.value.length < 6) {
+				alert("주민등록번호를 정확하게 입력하세요.");
+				f.s_jumin1.focus();
+				return false;
+			}
+			if (f.s_jumin2.value.length < 7) {
+				alert("주민등록번호를 정확하게 입력하세요.");
+				f.s_jumin2.focus();
+				return false;
+			}
+
+			if ( (f.m_birth_1.value+f.m_birth_2.value+f.m_birth_3.value).substring(8,2) != f.s_jumin1.value ) {
+				if( !confirm("후원자의 생년월일과 주민등록번호의 앞자리가 다릅니다.\n타인의 주민등록번호로는 등록이 불가능합니다.\n진행을 계속하시겠습니까?") ) {
+					return false;
+				}
+			}
+			if(!f.agree2.checked){
+				alert('국세청 정보 등록을 위한 개인정보 수집·이용에 동의하셔야 합니다. ');
+				f.agree2.focus();
+				return false;
+			}
+		}
+
+
+//		return false;
+
+		if ( f.s_support[0].checked == true ) {
+			cTxt = "긴급구호사업, 매월 1만원"
+		} else if ( f.s_support[1].checked == true ) {
+			cTxt = "긴급구호사업, 매월 2만원"
+		} else {
+			cTxt = "긴급구호사업, 매월 3만원"
+		}
+		if( !confirm( cTxt + "\n정기후원을 신청하시겠습니까?") ) {
+			return false;
+		} else {
+			f.target = "_self";
+			f.action = "pop_happyanding_proc.asp";
+			f.submit();
+		}
+	}
+
+	function pop_post() {
+		window.open('/html/common/popuppostal_road.asp','pop_post','width=600, height=450, top=150,left=150,scrollbars=0');
+	}
+
+	function chkBirth() {
+		var f = document.wbForm;
+		dayStr = f.m_birth_1.value+"-"+f.m_birth_2.value+"-"+f.m_birth_3.value;
+		if( chkdate(dayStr) == false ) {
+			f.chk_birth.value = 0;
+			alert("유효하지 않은 날짜입니다. 생년월일을 다시 확인해주세요.");
+		} else {
+			f.chk_birth.value = 1;
+			f.s_jumin1.value = (f.m_birth_1.value+f.m_birth_2.value+f.m_birth_3.value).substring(8,2);
+		}
+	}
+
+	function chkBirth2() {
+		var f = document.wbForm;
+		dayStr = f.a_birth_1.value+"-"+f.a_birth_2.value+"-"+f.a_birth_3.value;
+		if( chkdate(dayStr) == false ) {
+			f.chk_birth2.value = 0;
+			alert("유효하지 않은 날짜입니다. 생년월일을 다시 확인해주세요.");
+		} else {
+			f.chk_birth2.value = 1;
+		}
+	}
+
+	$(document).ready(function(){
+		chkBirth();
+		chkBirth2();
+
+
+		$('#a_cardnumber_2').attr("autocomplete","off");
+		$('#a_cardnumber_3').attr("autocomplete","off");
+		$('#socialnumber1').attr("autocomplete","off");
+		$('#socialnumber2').attr("autocomplete","off");
+
+
+	});
+
+
+	$(function () {
+
+		// 자동이체방식 show
+		$("#sponsor_paykind1").bind("click",function(){
+			$("#payinfo1").show();
+			$("#payinfo2").hide();
+		});
+
+		// 신용카드방식 show
+		$("#sponsor_paykind2").bind("click",function(){
+			$("#payinfo1").hide();
+			$("#payinfo2").show();
+		});
+
+
+		// 국세청 주민등록번호 노출
+		$("#taxreceipt_yes").bind("click",function(){
+			$("#taxreceipt_jumin").show();
+		});
+		$("#taxreceipt_no").bind("click",function(){
+			$("#taxreceipt_jumin").hide();
+		});
+
+	});
+
+
+	function chkCHAR(obj){
+		// "{}[]()<>?|`~'!@#$%^&*-+=,.;:\"'\\/ "
+//		var bTxt = "{}[]()<>?|`~'!@#$%^&*-+=,.;:\"'\\/ ";
+		var bTxt = "{}[]<>?|`~'!@#$%^&*+=.;:\"'\\/";
+		var bFlag = true;
+		for (var i = 0;i < obj.value.length;i++) {
+			if(bTxt.indexOf(obj.value.charAt(i)) != -1)
+				bFlag = false;
+		}
+		return bFlag;
+	}
+
+	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr,jibunAddr,zipNo,admCd,rnMgtSn,bdMgtSn){
+		document.getElementById('m_addr2').value = roadAddrPart1;
+		document.getElementById('m_addr3').value = addrDetail + " " + roadAddrPart2;
+		document.getElementById('m_addr1').value = zipNo;
+	}
+
+	function goZipPopup(){
+		var pop = window.open("/zipcode/jusoPopup.asp","pop","width=570,height=420, scrollbars=yes, resizable=yes");
+	}
+
+
+	function goMyWV() {
+		var url = "https://my.worldvision.or.kr/sponsor/oneStopSelect.asp?";
+		var f = document.wbForm;
+
+		if (f.s_support[0].checked == true) {
+			url = url + "code=2902";
+		} else if(f.s_support[1].checked== true ) {
+			url = url + "code=2910";
+		}
+		//alert(url);
+		window.open(url);
+	}
+
+
+//-->
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+
+
+
+<form name="wbForm" action="" method="post" onsubmit="return goSubmit();" autocomplete="off">
+
+<input type="hidden" name="mode" value="INSERT">
+<input type="hidden" name="s_ip" value="59.28.3.217">
+
+<input type="hidden" name="chk_birth" value="1">
+<input type="hidden" name="chk_birth2" value="1">
+<input type="hidden" name="a_verify" value="0">
+<input type="hidden" name="a_verify_url" size="60" value="">
+
+<input type="hidden" name="moti" value="19502">
+<input type="hidden" name="mcode" value="3596">
+
+<input type="hidden" name="s_etc1" value="PC">
+<input type="hidden" name="return_page" value="http://www.worldvision.or.kr/campaign/2015/pop_happyanding_done.asp">
+
+
+<div id="pop_happy01"> <a href="http://www.worldvision.or.kr/campaign/2015/pop_happyanding_close.asp"><img src="popup_btn_close.png" alt="" class="btn_popCLose"></a>
+  <h1 style="display:none"><img src="popup_title_01.png" alt="Happy Anding 정기후원신청"></h1>
+ <div class="contentArea">
+  <p><span class="title pd_r25">후원 종류</span>
+   <label class="txt pd_r15">
+    <input type="radio" name="s_support" style="vertical-align: central;" value="긴급구호사업 정기후원 1만원">
+    긴급구호사업, 매월 1만원</label>
+   <label class="txt pd_r15">
+    <input type="radio" name="s_support" style="vertical-align: central;" value="긴급구호사업 정기후원 2만원">
+    긴급구호사업, 매월 2만원</label>
+   <label class="txt">
+    <input type="radio" name="s_support" style="vertical-align: central;" value="긴급구호사업 정기후원 3만원">
+    긴급구호사업, 매월 3만원</label>
+  </p>
+  <div class="box mg_t10 mg_b20" style="width:790px;">한국월드비전은 16개국가에서 18개의 긴급구호사업(2015년 기준)을 진행 중에 있으며, 월 2만원이면 시리아의 한 아이에게, 월 1만원이면 남수단의 한 가정(5인 기준)에 식량 제공이 가능합니다.</div>
+  <p class="pd_b10"><span class="title pd_r25">후원 신청</span><span class="txt_sb">기존 후원자이시거나 만 14세 미만/기업/단체/교회이신 경우  <a href="https://my.worldvision.or.kr/sponsor/oneStopSelect.asp?code=2904&amp;moti=19485" target="_blank"><img src="cont_05_btn_onestop.png" alt="one-stop 후원신청"></a> 에서 신청하세요.</span></p>
+  <div class="form1">
+   <div class="txt mg_b10"><span class="ff6600">*</span> 이름
+    <div class="form_position inline">
+     <input type="text" name="m_name" id="m_name" class="form_input2" maxlength="20" tabindex="101">
+     </div>
+   </div>
+   <div class="txt mg_b10"><span class="ff6600">*</span> 생년월일
+    <div class="form_position inline">
+     <select class="form_select2" name="m_birth_1" id="m_birth_1" onchange="chkBirth();" tabindex="121">
+      <option value="1900">1900</option><option value="1901">1901</option><option value="1902">1902</option><option value="1903">1903</option><option value="1904">1904</option><option value="1905">1905</option><option value="1906">1906</option><option value="1907">1907</option><option value="1908">1908</option><option value="1909">1909</option><option value="1910">1910</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995" selected="">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option>
+     </select>
+     <label class="txt2">년</label>
+     <select class="form_select2" name="m_birth_2" id="m_birth_2" onchange="chkBirth();" tabindex="122" style="width:60px;">
+      <option value="01" selected="">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+     </select>
+     <label class="txt2">월</label>
+     <select class="form_select2" name="m_birth_3" id="m_birth_3" onchange="chkBirth();" tabindex="123" style="width:60px;">
+      <option value="01" selected="">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+     </select>
+     <label class="txt2">일</label>
+    </div>
+   </div>
+   <div class="txt mg_b10"><span class="ff6600">*</span> 휴대폰
+    <div class="form_position inline">
+     <select class="form_select2" name="m_mobile1" id="m_mobile1" onchange="document.wbForm.m_mobile2.focus();" tabindex="131" style="width:54px;">
+      <option value="010">010</option>
+      <option value="011">011</option>
+      <option value="016">016</option>
+      <option value="017">017</option>
+      <option value="018">018</option>
+      <option value="019">019</option>
+     </select>
+     -
+     <input class="form_input1" type="text" id="m_mobile2" name="m_mobile2" maxlength="4" style="ime-mode:disabled;width:53px;" onkeypress="OnlyNum()" onkeyup="if(this.value.length==4) document.wbForm.m_mobile3.focus();isNumerics(&#39;m_mobile2&#39;);" onkeydown="OnlyNum();isNumerics(&#39;m_mobile2&#39;);" tabindex="132">
+     -
+     <input class="form_input1" type="text" id="m_mobile3" name="m_mobile3" maxlength="4" style="ime-mode:disabled;width:53px;" onkeypress="OnlyNum()" onkeyup="if(this.value.length==4) document.wbForm.m_mail1.focus();isNumerics(&#39;m_mobile3&#39;);" onkeydown="OnlyNum();isNumerics(&#39;m_mobile3&#39;);" tabindex="133">
+    </div>
+   </div>
+   <div class="txt mg_b10"><span class="ff6600">*</span> 이메일
+    <div class="form_position inline">
+     <input class="form_input1" type="text" name="m_mail1" maxlength="30" id="m_mail1" style="ime-mode:disabled; width:70px;" tabindex="141">
+     @
+     <input class="form_input1" type="text" name="m_mail2" maxlength="30" id="m_mail2" style="width:90px;ime-mode:disabled; width:70px;" tabindex="142">
+     <select class="form_select3" name="email_choice" id="email_choice" onchange="document.wbForm.m_mail2.value=this.value;" title="도메인 선택">
+      <option value="">직접입력</option>
+      <option value="naver.com">naver.com</option>
+      <option value="hanmail.net">hanmail.net</option>
+      <option value="daum.net">daum.net</option>
+      <option value="nate.com">nate.com</option>
+      <option value="yahoo.co.kr">yahoo.co.kr</option>
+      <option value="paran.com">paran.com</option>
+      <option value="empal.com">empal.com</option>
+      <option value="gmail.com">gmail.com</option>
+      <option value="hotmail.com">hotmail.com</option>
+      <option value="netian.com">netian.com</option>
+      <option value="dreamwiz.com">dreamwiz.com</option>
+      <option value="hanmir.com">hanmir.com</option>
+      <option value="lycos.co.kr">lycos.co.kr</option>
+      <option value="korea.com">korea.com</option>
+      <option value="chollian.net">chollian.net</option>
+      <option value="orgio.net">orgio.net</option>
+      <option value="hanafos.com">hanafos.com</option>
+      <option value="kornet.net">kornet.net</option>
+     </select>
+    </div>
+   </div>
+   <div class="txt"><span class="ff6600">*</span> 주소
+    <div class="form_position inline">
+     <input class="form_input1" type="hidden" id="m_addr1" name="m_addr1">
+     <input class="form_input2" type="text" id="m_addr2" name="m_addr2">
+     <span class="txt_sb"><a href="javascript:goZipPopup();" class="btn_search">우편번호검색</a></span> </div>
+   </div>
+   <div class="txt mg_t5">
+    <div class="form_position inline">
+     <input class="form_input2" type="text" id="m_addr3" name="m_addr3" value="" placeholder="" tabindex="152">
+     <br>
+     <span class="txt_sb">*우편번호 검색 클릭 후 도로명 주소를 이용해 주세요.</span> </div>
+   </div>
+  </div>
+  <div class="form1">
+   <p class="txt mg_b10"><span class="ff6600">*</span> 결제방법</p>
+   <p class="txt2 mg_b20">
+    <input type="radio" name="a_accountkind" id="sponsor_paykind1" value="신용카드" tabindex="211" checked="checked">
+    <label class="mg_r50">신용카드</label>
+    <input type="radio" name="a_accountkind" id="sponsor_paykind2" value="자동이체" tabindex="212">
+    <label>자동이체</label>
+   </p>
+   
+   <!-- 결제정보 - 신용카드 -->
+   <div id="payinfo1">
+    <div class="txt2 mg_b10">카드명
+     <div class="form_position inline">
+      <select name="a_cardcompany" class="form_select3" tabindex="221">
+       <option value="">선택</option>
+       <option value="BC카드">BC카드 </option>
+       <option value="국민카드">국민카드</option>
+       <option value="삼성카드">삼성카드</option>
+       <option value="외환카드">외환카드</option>
+       <option value="롯데카드">롯데카드</option>
+       <option value="신한카드">신한카드</option>
+       <option value="현대카드">현대카드</option>
+       <option value="씨티카드">씨티카드</option>
+       <option value="하나SK카드">하나SK카드</option>
+       <option value="NH카드">NH카드</option>
+      </select>
+      <span class="txt_sb">카드승인일 매월 15일, 미승인시 25일 추가승인</span> </div>
+    </div>
+    <div class="txt2 mg_b10">카드번호
+     <div class="form_position inline">
+      <input class="form_input1" type="text" id="a_cardnumber_1" name="a_cardnumber_1" style="ime-mode:disabled; width:60px;" maxlength="4" onkeypress="OnlyNum()" onkeyup="isNumerics(&#39;a_cardnumber_1&#39;);isNumerics(&#39;m_mobile2&#39;);if(this.value.length==4) document.wbForm.a_cardnumber_2.focus();" onkeydown="OnlyNum();isNumerics(&#39;a_cardnumber_1&#39;);" tabindex="231">
+      -
+      <input class="form_input1" type="password" id="a_cardnumber_2" name="a_cardnumber_2" style="ime-mode:disabled; width:60px;" maxlength="4" onkeypress="OnlyNum()" onkeyup="isNumerics(&#39;a_cardnumber_2&#39;);if(this.value.length==4) document.wbForm.a_cardnumber_3.focus();" onkeydown="OnlyNum();isNumerics(&#39;a_cardnumber_2&#39;);" tabindex="232" autocomplete="off">
+      -
+      <input class="form_input1" type="password" id="a_cardnumber_3" name="a_cardnumber_3" style="ime-mode:disabled; width:60px;" maxlength="4" onkeypress="OnlyNum()" onkeyup="isNumerics(&#39;a_cardnumber_3&#39;);if(this.value.length==4) document.wbForm.a_cardnumber_4.focus();" onkeydown="OnlyNum();isNumerics(&#39;a_cardnumber_3&#39;);" tabindex="233" autocomplete="off">
+      -
+      <input class="form_input1" type="text" id="a_cardnumber_4" name="a_cardnumber_4" style="ime-mode:disabled; width:60px;" maxlength="4" onkeypress="OnlyNum()" onkeyup="isNumerics(&#39;a_cardnumber_4&#39;);" onkeydown="OnlyNum();isNumerics(&#39;a_cardnumber_4&#39;);" tabindex="234">
+     </div>
+    </div>
+    <div class="txt2 mg_b10">유효기간
+     <div class="form_position inline">
+      <select class="form_select2" name="a_cardyear" tabindex="241">
+       <option value="2015">2015</option><option value="2016" selected="">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option>
+      </select>
+      <label class="txt2">년</label>
+      <select class="form_select2" name="a_cardmonth" tabindex="242">
+       <option value="01" selected="">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+      </select>
+      <label class="txt2">월</label>
+     </div>
+    </div>
+    <div class="txt2 pd_b30">카드소유주
+     <div class="form_position inline">
+      <input class="form_input2" type="text" name="a_cardname" id="a_cardname" maxlength="20" tabindex="251">
+      
+      <label class="txt2">
+       <input type="checkbox" name="copybtncard" value="Y" id="copybtncard" onclick="copyname();" tabindex="252">
+       후원자와 동일</label>
+     </div>
+    </div>
+   </div>
+   
+   <!-- 결제정보 - 자동이체 -->
+   <div id="payinfo2" style="display:none;">
+    <div class="txt2 mg_b10">은행명
+     <div class="form_position inline">
+      <select class="form_select3" name="a_bankcompany" id="a_bankcompany" tabindex="301" onchange="document.wbForm.a_verify.value=0;">
+       <option value="">선택</option>
+       <option value="산업은행">산업은행</option>
+       <option value="기업은행">기업은행</option>
+       <option value="국민은행">국민은행</option>
+       <option value="외환은행">외환은행</option>
+       <option value="수협">수협</option>
+       <option value="농협중앙회">농협중앙회</option>
+       <option value="단위농협">단위농협</option>
+       <option value="우리은행">우리은행</option>
+       <option value="스탠다드차타드은행">스탠다드차타드은행</option>
+       <option value="씨티은행">씨티은행</option>
+       <option value="대구은행">대구은행</option>
+       <option value="부산은행">부산은행</option>
+       <option value="광주은행">광주은행</option>
+       <option value="제주은행">제주은행</option>
+       <option value="전북은행">전북은행</option>
+       <option value="경남은행">경남은행</option>
+       <option value="새마을금고">새마을금고</option>
+       <option value="신협">신협</option>
+       <option value="우체국">우체국</option>
+       <option value="하나은행">하나은행</option>
+       <option value="신한은행">신한은행</option>
+       <option value="동양증권">동양증권</option>
+       <option value="현대증권">현대증권</option>
+       <option value="미래에셋증권">미래에셋증권</option>
+       <option value="KDB대우증권">KDB대우증권</option>
+       <option value="삼성증권">삼성증권</option>
+       <option value="한국투자증권">한국투자증권</option>
+       <option value="우리투자증권">우리투자증권</option>
+       <option value="하이투자증권">하이투자증권</option>
+       <option value="HMC투자증권">HMC투자증권</option>
+       <option value="SK증권">SK증권</option>
+       <option value="대신증권">대신증권</option>
+       <option value="한화투자증권">한화투자증권</option>
+       <option value="하나대투증권">하나대투증권</option>
+       <option value="신한금융투자">신한금융투자</option>
+       <option value="동부증권">동부증권</option>
+       <option value="유진투자증권">유진투자증권</option>
+       <option value="메리츠종금증권">메리츠종금증권</option>
+       <option value="농협증권">농협증권</option>
+       <option value="부국증권">부국증권</option>
+       <option value="신영증권">신영증권</option>
+      </select>
+      
+      <input type="radio" name="a_trnsferday" id="a_trnsferday1" value="10" checked="checked" tabindex="305">
+      <label class="mg_r20">매월 10일</label>
+      <input type="radio" name="a_trnsferday" id="a_trnsferday2" value="25" tabindex="306">
+      <label>매월 25일</label>
+     </div>
+    </div>
+    <div class="txt2 mg_b10">계좌번호
+     <div class="form_position inline">
+      <input class="form_input2" type="text" name="a_banknumber" id="a_banknumber" style="ime-mode:disabled;" maxlength="30" onkeypress="OnlyNum()" tabindex="311" onkeyup="isNumerics(&#39;a_banknumber&#39;);" onkeydown="OnlyNum();isNumerics(&#39;a_banknumber&#39;);document.wbForm.a_verify.value=0;">
+      
+      <span class="txt_sb"><a href="javascript:void(chkAccount(&#39;valid&#39;));" class="btn_search">계좌번호 인증</a></span>
+      
+     </div>
+    </div>
+    <div class="txt2 mg_b10">예금주
+     <div class="form_position inline">
+      <input class="form_input2" type="text" name="a_bankname" id="a_bankname" maxlength="20" onkeydown="document.wbForm.a_verify.value=0;" tabindex="315">
+      
+      <label class="txt2">
+       <input type="checkbox" name="copybtnbank" value="Y" id="copybtnbank" onclick="copyname();document.wbForm.a_verify.value=0;" tabindex="316">
+       후원자와 동일</label>
+     </div>
+    </div>
+    <div class="txt2 pd_b30" id="a_birth"> 예금주 생년월일
+     <div class="form_position inline">
+      <select class="form_select3" name="a_birth_1" id="a_birth_1" onchange="chkBirth2();" tabindex="321">
+       <option value="1900">1900</option><option value="1901">1901</option><option value="1902">1902</option><option value="1903">1903</option><option value="1904">1904</option><option value="1905">1905</option><option value="1906">1906</option><option value="1907">1907</option><option value="1908">1908</option><option value="1909">1909</option><option value="1910">1910</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995" selected="">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option>
+      </select>
+      <label class="txt2">년</label>
+      <select class="form_select3" name="a_birth_2" id="a_birth_2" onchange="chkBirth2();" tabindex="322">
+       <option value="01" selected="">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+      </select>
+      <label class="txt2">월</label>
+      <select class="form_select3" name="a_birth_3" id="a_birth_3" onchange="chkBirth2();" tabindex="333">
+       <option value="01" selected="">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+      </select>
+      <label class="txt2">일</label>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="form2">
+   <div class="agree">
+    <div class="txt2 mg_t10 mg_b10">
+     <input type="checkbox" name="agree1" tabindex="351" id="agree1" value="Y">
+     <label class="txt2">개인정보수집 동의</label>
+      <a href="javascript:viewAgree(1);"><img src="cont_05_btn_detail.png" alt="상세보기"></a></div>
+   </div>
+  </div>
+  <div class="form2">
+   <div class="box">
+    <p class="box_txt mg_b10 bb">국세청 연말정산 간소화 서비스에서 기부금 영수증을 발급하시겠습니까?
+     <input type="radio" name="s_jumin_chk" value="Y" id="taxreceipt_yes" tabindex="401">
+     <label class="txt2 inline mg_r20"> 예</label>
+     <input type="radio" name="s_jumin_chk" value="N" id="taxreceipt_no" tabindex="402" checked="checked">
+     <label class="txt2 inline">아니오</label>
+    </p>
+    <div id="taxreceipt_jumin" style="display:none;">
+     <p class="box_txt mg_b10 bb">후원자님의 주민등록번호(타인 주민등록번호 불가)를 입력하시면 국세청 연말정산 간소화 서비스에 등록됩니다.</p>
+     <p class="box_txt mg_b10 bb"> 주민등록번호 
+      <input class="form_input1" type="text" name="s_jumin1" id="socialnumber1" maxlength="6" style="ime-mode:disabled;" onkeypress="OnlyNum()" onkeyup="if(this.value.length==6) document.wbForm.s_jumin2.focus();isNumerics(&#39;socialnumber1&#39;);" onkeydown="OnlyNum();isNumerics(&#39;socialnumber1&#39;);" tabindex="411" autocomplete="off">
+      -
+      <input class="form_input1" type="password" name="s_jumin2" id="socialnumber2" maxlength="7" style="ime-mode:disabled;" onkeypress="OnlyNum()" onkeyup="isNumerics(&#39;socialnumber2&#39;);" onkeydown="OnlyNum();isNumerics(&#39;socialnumber2&#39;);" tabindex="412" autocomplete="off">
+      
+      <input type="checkbox" name="agree2" tabindex="421" id="agree2" value="Y">
+      <label class="txt3 inline">개인정보수집 동의</label>
+       <a href="javascript:viewAgree(2);"><img src="cont_05_btn_detail.png" alt="상세보기"></a> </p>
+    </div>
+   </div>
+  </div>
+  <div class="form2 pd_t20" style="text-align:center;"><a href="javascript:void(goNext());"><img src="popup_btn_01.png" alt="정기후원하기"></a></div>
+ </div>
+
+ <div class="popAgree" id="agree1_view" style="display:none;">
+ 	<p class="agreetitle pd_t10">개인정보 수집 및 이용 동의</p>
+    <a href="javascript:viewAgree(1);"><img src="popup_btn_close2.png" alt="닫기" class="btnClose"></a>
+<div class="agreeTxt">
+  <p>'사회복지법인 월드비전'은 사용자의 개인정보보호법에 의거하여 개인정보를 수집함에 있어 아래의 내용을 안내하고 있습니다.</p>
+  <p></p>
+  <p>1.개인정보 수집 및 이용 목적</p>
+  <p>후원신청, 마케팅 및 광고에 활용, 후원금 결제 및 후원자 서비스 제공에 관한 계약, 회사 내부 방침에 의한 정보보유 사유, 고객상담 등 후원 서비스</p>
+  <p></p>
+  <p>2.수집하려는 개인정보의 항목</p>
+  <p>회사는 후원신청, 원활한 고객상담, 각종 서비스 등 기본적인 서비스 제공을 위한 필수정보와 고객 맞춤 서비스 제공을 위한 선택정보로 구분하여 아래와 같은 개인정보를 수집하고 있습니다.</p>
+  <p></p>
+  <p> ● 필수항목 : 이름, 생년월일, 휴대전화번호, 이메일주소, 주소</p>
+  <p> - 신용카드 결제 시 : 카드사명, 카드번호, 유효기간, 카드소유주</p>
+  <p> - 자동이체 시 : 은행명, 예금주, 계좌번호, 예금주 생년월일, 이체일, 계좌인증정보</p>
+  <p> ● 서비스 이용과정이나 사업처리 과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.</p>
+  <p> - IP Address, 쿠키, 방문일시, 서비스 이용 기록, 불량 이용 기록</p>
+  <p></p>
+  <p>3.개인정보의 보유 이용기간</p>
+  <p>이용자의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다. 단, 후원금 결제 및 후원자 서비스 제공에 관한 계약등 개인정보취급방침에 별도 명시한 경우 전자상거래 등에서의 소비자보호에 관한 법률, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 통신비밀보호법에 준합니다.</p>
+  <p></p>
+  <p>4.동의를 거부할 권리 / 동의거부에 따른 안내</p>
+  <p>고객께서는 본 안내에 따른 개인정보 수집에 대하여, 거부할 수 있는 권리가 있습니다. 본 개인정보에 대해 거부할 경우, 후원신청이 불가능하며 각종 후원 서비스를 받으실 수 없습니다.</p></div>
+ </div>
+
+
+<div class="popAgree" id="agree2_view" style="display:none;">
+ 	<p class="agreetitle pd_t10">개인정보 수집 및 이용 동의</p>
+    <a href="javascript:viewAgree(2);"><img src="popup_btn_close2.png" alt="닫기" class="btnClose"></a>
+<div class="agreeTxt">
+  <p>'사회복지법인 월드비전'은 사용자의 개인정보보호법에 의거하여 개인정보를 수집함에 있어 아래의 내용을 안내하고 있습니다.</p>
+  <p></p>
+	<p>1.개인정보 수집 및 이용 목적</p>
+<p>국세청 연말정산 간소화 서비스 등록</p>
+<p></p>
+<p>2.수집하려는 개인정보의 항목</p>
+<p>주민등록번호</p>
+<p>
+</p><p>3.개인정보의 보유 이용기간</p>
+<p>이용자의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다.</p></div>
+ </div>
+
+ 
+</div>
+
+
+
+</form>
+
+
+
+
+</body></html>

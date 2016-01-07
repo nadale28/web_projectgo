@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">마이리틀다이어리</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_sub">얘시화면</string>
+    <string name="title_activity_sub_search">검색화면</string>
+    <string name="title_activity_fagment5">Fagment5</string>
+    
+
+
+</resources>

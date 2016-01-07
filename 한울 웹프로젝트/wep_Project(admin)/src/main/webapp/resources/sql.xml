@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql">
+   <insert id="admin_insert" parameterType="com.superJ.admin.AdminDTO">
+      insert into admin_info values(#{id},#{name},#{password})
+   </insert>
+   <select id="admin_select" parameterType="com.superJ.admin.AdminDTO" resultType="com.superJ.admin.AdminDTO">
+       select rownum no,b.* from(select * from admin_info) b order by no desc
+   </select>
+   <select id="cnt" resultType="int">
+        select count(*) cnt from members
+   </select>
+   <select id="pageAdminInfo" parameterType="com.superJ.admin.PageAdminInfo" resultType="com.superJ.admin.AdminDTO">
+        select m.* from (select rownum no,b.id,b.name,b.email2,
+					b.email,b.reg_date,b.address,b.phone1,b.phone2,b.phone3
+		 from (select * from members b order by reg_date) b 
+		 order by no desc) m
+			 where no between #{begin} and #{end}
+   </select>
+    <select id="members_select" parameterType="com.superJ.admin.AdminDTO" resultType="com.superJ.admin.AdminDTO">
+        select m.* from (select rownum no,b.id,b.name,b.email2,
+		b.email,b.reg_date,b.address,b.phone1,b.phone2,b.phone3
+		from (select * from members b order by reg_date) b 
+		order by no desc) m
+   </select>
+<delete id="admin_delete" parameterType="java.lang.String" >
+    delete from admin_info where id=#{id} 
+</delete>
+<select id="reply_cnt" resultType="int">
+	   select count(*) cnt from reply 
+	</select>
+	
+	<select id="reply_list" parameterType="com.superJ.admin.ReplyPageInfo" resultType="com.superJ.admin.BoardDTO">
+	    select * from 	
+			(select rownum no, b.* from 
+			 (select * from reply order by rdate desc) b 
+			 order by no
+			)
+		where no between #{begin} and #{end}
+	</select>
+	
+	<delete id="reply_delete" parameterType="java.lang.String" >
+    delete from reply where rdate=#{rdate} 
+	</delete>
+</mapper>

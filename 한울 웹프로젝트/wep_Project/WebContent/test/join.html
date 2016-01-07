@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		$('*').mousedown(function(){
+			if($('.id').val()==''){
+				$('.condition-id').html('필수 정보입니다');
+				$('.condition-id').css('color','red');
+				$('.possible-id').html('');
+			}
+			if($('.pw').val()==''){
+				$('.condition-pw').html('필수 정보입니다');
+				$('.condition-pw').css('color','red');
+				$('.possible-pw').html('');
+			}
+			if($('.re-pw').val()==''){
+				$('.condition-re-pw').html('필수 정보입니다');
+				$('.condition-re-pw').css('color','red');
+				$('.possible-re-pw').html('');
+			}
+		});
+		
+		$('.id').keyup(function(){
+			var id = $('.id').val();
+			var id_if = /^[a-z0-9]{6,12}$/;  
+			
+			 if(id_if.test(id)){
+				$('.possible-id').html('적합');
+				$('.possible-id').css('color','green');
+				$('.condition-id').html('멋진 아이디입니다');
+				$('.condition-id').css('color','green');
+			}
+			else{
+				$('.possible-id').html('부적합');
+				$('.possible-id').css('color','red');
+				$('.condition-id').html('6~12자의 영문 소문자, 숫자만 사용 가능합니다.');
+				$('.condition-id').css('color','red');
+			}
+		});
+
+		$('.pw').keyup(function(){
+			var pw = $('.pw').val();
+			var pw_if = /^[a-z0-9\W]{6,12}$/;
+			var pw_if2 = /^[\W]+[a-zA-z0-9]+/;
+			var pw_if3 = /^[a-zA-z0-9]+[\W]+/; 
+			
+			 if(pw_if.test(pw)&&pw_if2.test(pw) || pw_if.test(pw)&&pw_if3.test(pw)){
+				$('.possible-pw').html('적합');
+				$('.possible-pw').css('color','green');
+				$('.condition-pw').html('안전한 비밀번호입니다.');
+				$('.condition-pw').css('color','green');				
+			}
+			else{
+				$('.possible-pw').html('부적합');
+				$('.possible-pw').css('color','red');
+				$('.condition-pw').html('6~12자의 특수문자, 영문 대 소문자, 숫자를 사용하세요.(특수문자 한개 이상 포함 )');
+				$('.condition-pw').css('color','red');
+			}
+		});
+
+		$('.re-pw').keyup(function(){
+			var pw = $('.pw').val();
+			var re_pw = $('.re-pw').val();
+			if(pw==re_pw){
+				$('.possible-re-pw').html('일치');
+				$('.possible-re-pw').css('color','green');
+				$('.condition-re-pw').html('');
+			}
+			else{
+				$('.possible-re-pw').html('불일치');
+				$('.possible-re-pw').css('color','red');
+				$('.condition-re-pw').html('비밀번호가 일치하지 않습니다.');
+				$('.condition-re-pw').css('color','red');
+				
+			}
+		});
+		
+		$('.left').mouseover(function(){
+			$(this).css('cursor','pointer');
+		});
+
+		$('.right').mouseover(function(){
+			$(this).css('cursor','pointer');
+		});
+
+		$('.left').click(function(){
+			$(this).css({
+				'color': 'green',
+				'border-color': 'green',			
+			});
+			$('.right').css({
+				'color': 'rgb(140,140,140)',
+				'border-color': 'rgb(210,210,210)',			
+			});
+		});
+
+		$('.right').click(function(){
+			$(this).css({
+				'color': 'green',
+				'border-color': 'green',			
+			});
+			
+			$('.left').css({
+				'color': 'rgb(140,140,140)',
+				'border-color': 'rgb(210,210,210)',			
+			});
+			
+		});
+		var year; var month; var date;
+		var y; var m; var d;
+		$('.year').keyup(function(){
+			
+			year = $('.year').val();
+			var con_month = /^[1]{1}[9]{1}[0-9]{2}$/;
+			if(con_month.test(year)){
+				 y = 'year';
+			}
+			else{
+				y="n";
+			}
+
+		});
+		$('.date').keyup(function(){
+			
+			date = $('.date').val();
+			var con_month1 = /^[0-9]{1}$/;
+			var con_month2 = /^[0|1|2]{1}[0-9]{1}$/;
+			var con_month3 = /^[3]{1}[0|1]{1}$/;
+			if(con_month1.test(date)||con_month2.test(date)||con_month3.test(date)){
+				d = 'date';
+			}else{
+				d = "n";
+			}
+			//alert($('.condition-birth').html());
+			
+		});
+
+	
+		$('.birth').keyup(function(){
+			if(month !='월'){
+				m = 'month'; 
+			}else{
+			m='n';
+			}
+
+			if( ((y+m+d)!="yearmonthdate") ){
+				$('.condition-birth').html('생년월일을 확인해주세요');
+			}else if(month==2&&date>28){
+				$('.condition-birth').html('생년월일을 확인해주세요');
+			}else if(/[4]*[6]*[9]*[11]*/.test(month)&&date>30){
+				$('.condition-birth').html('생년월일을 확인해주세요');
+			}
+			else{
+			$('.condition-birth').html('');
+			}
+		});
+
+		$('.sub').mouseover(function(){
+			$(this).css('cursor','pointer');
+		});
+
+		$('.cancel').mouseover(function(){
+			$(this).css('cursor','pointer');
+		});
+		
+
+		
+
+
+	
+		
+	});
+  </script>
+  <style>
+	*{margin: 0 auto;}
+	.dom {width: 960px;}
+	@media screen and (min-width: 960px){
+		 *{background: rgb(246,246,246); font-weight: bold;}
+		 .header {height: 110px;}
+		 .header > h1 { 
+			margin-top: 55px;
+			text-align: center; 
+			font-size: 50px;
+			letter-spacing: 2px;
+			color: #00D8FF;
+			}
+
+			
+		 .ipb-box{
+			margin: 0 auto;
+			border:1px solid rgb(213,213,213);
+			width: 460px; height: 210px;
+			}
+		 .box { 
+			margin: 0 auto;
+			width: 460px; height: 70px; 
+			overflow: hidden; 			 
+			border-bottom: 1px solid rgb(220,220,220);
+			box-sizing: border-box;
+			padding: 10px;
+			background: white;
+			}
+		 .box > * {background: white;}
+		 .box > .input-box { 
+			width: 80%; height: 30px; 
+			float: left;
+			box-sizing: border-box; 
+			letter-spacing: 1px;
+			text-align: 15px;
+			font-size: 13px;
+			border: none;
+			}
+		 .box > .possible-box {  
+			width: 20%; height: 30px;
+			line-height: 30px;
+			text-align: right;
+			padding-right: 10px;
+			float: right; 
+			font-size: 13px;
+			box-sizing: border-box;
+			}
+		  .box > .condition-box {
+			height: 10px;
+			font-size: 11px;
+			box-sizing: border-box;
+			color: red;
+		  }
+			
+		  .nsb-box {
+			 width:460px; height: 170px;
+			 margin: 0 auto;
+			 border:1px solid rgb(213,213,213);
+			 margin-top: 10px;
+			}
+		  .box2 { 
+			margin: 0 auto;
+			width: 460px; height: 50px; 
+			overflow: hidden; 			 
+			border-bottom: 1px solid rgb(220,220,220);
+			box-sizing: border-box;
+			padding: 10px;
+			background: white; 
+			}
+		  .box2 > * {background: white;}
+		  .box2 > .n-box { width: 100%; height: 100%; padding: 0 5px; box-sizing: border-box;}
+		  .box2 > .n-box >.name { 
+			width: 100%; height: 100%; 
+			border:none;
+			background: white;
+			}
+		  
+		  .box2 > .s-box {
+			width: 100%; height: 100%;
+			overflow: hidden;
+			padding: 0 5px;
+			box-sizing: border-box;
+			}
+		  .box2 > .s-box > .left, .right {  
+			float: left; border: 1px solid rgb(220,220,220); 
+			width:50%; height:100%; 
+			box-sizing:border-box; background:white;
+			text-align: center;
+			font-size: 13px;
+			line-height: 28px;
+			color: rgb(140,140,140);
+			font-weight: normal;
+			}
+		   
+		  #male{display: none;}
+		  #female{display: none;}
+		
+			.box3 { 
+				margin: 0 auto;
+				width: 460px; height: 70px; 
+				overflow: hidden; 			 
+				border-bottom: 1px solid rgb(220,220,220);
+				box-sizing: border-box;
+				background: white; 
+			}
+
+			.box3 > .birth {
+			width: 100%; height: 50px;
+			overflow: hidden;
+			box-sizing: border-box;
+			
+			}
+		  	  
+		  .box3 > .birth > .b {
+			width: 60px; height: 100%; 
+			box-sizing:border-box; float:left;
+			padding: 16px 14px;
+			border-right: 1px solid rgb(220,220,220);
+			font-size: 13px;
+			background:white;
+		  }
+
+		  .box3 > .birth > .b-left {
+			width: 132.5px; height: 100%; 
+			box-sizing:border-box; float:left;
+			padding: 13px 14.25px;
+			border-right: 1px solid rgb(220,220,220);
+			background:white;
+
+			}
+		  .box3 > .condition-birth { background: white; border-top: 1px solid rgb(220,220,220); width:100%; height: 20px; font-size : 11px;}
+
+		.box3 > .birth > .b-left > .c {
+			margin: 0 auto; width: 100%;
+		  }
+		  
+		  .box3 > .birth > .b-left > .c-left {
+			margin: 0 auto; width: 100px;
+		  }
+		.box3 > .condition-birth {color: red;}
+
+		
+		 .sub-large-box {
+			 width:460px; 
+			 margin: 0 auto;
+			 border:1px solid rgb(213,213,213);
+			 margin-top: 10px;
+			}
+
+		.box2 > .sub-box {
+			width: 100%; height: 100%;
+			overflow: hidden;
+			padding: 0 5px;
+			box-sizing: border-box;
+			}
+		.box2 > .sub-box > .sub, .cancel {  
+			float: left; border: 1px solid rgb(220,220,220); 
+			width:50%; height:100%; 
+			box-sizing:border-box; background:white;
+			text-align: center;
+			font-size: 13px;
+			line-height: 28px;
+			color: rgb(140,140,140);
+			font-weight: normal;
+		}
+		
+	}
+
+
+		$('.sub').click(function(){
+			
+			if($('.possible-id').html()=='부적합'||$('.possible-re-pw').html()=='부적합')
+			{
+				alert("아이디 또는 비밀번호 확인...");
+			}else if($('.name').val()=='')
+			{
+				alert("이름을 입력해주세요");
+			}else if($('.possible-birth').html()!='')
+			{
+				alert("생년월일을 확인해주세요");
+			}else if($('#male').is(':checked')||$('#female').is(':checked'))
+			{
+				alert('가입완료');
+			}else 
+			{
+				alert('성별을 고르세요');
+			}
+		});
+
+		$('.cancel').click(function(){
+			$(location).attr('href','join.html');
+		});
+
+
+
+  </style>
+ </head>
+ <body>
+ <div class = "dom">
+	<div class = "header">
+		<h1>회원가입</h1>
+	</div>
+	
+	<div class = "container">
+		<div class="ipb-box">
+			<div class ="box">	
+				<input type="text" name="id" class="id input-box" placeholder="아이디" maxlength="12"/> 
+				<div class="possible-id possible-box"></div>		
+				<div class="condition-id condition-box">필수 정보입니다.</div>
+			</div>
+			<div class ="box">
+				<input type="password" name="pw" class="pw input-box" placeholder="비밀번호" maxlength="12"/>
+				<div class="possible-pw possible-box"></div>
+				<div class="condition-pw condition-box">필수 정보입니다.</div>
+			</div>
+			<div class ="box">
+				<input type="password" name="re-pw" class="re-pw input-box" placeholder="비밀번호 재확인" maxlength="12"/>
+				<div class="possible-re-pw possible-box"></div>
+				<div class="condition-re-pw condition-box">필수 정보입니다.</div>
+			</div>
+		</div>
+		<div class="nsb-box">
+			<div class ="box2">	
+				<div class='n-box'>
+				<input type="text" name="name" class="name" placeholder="이름" maxlength="12"/> 
+				</div>
+			</div>
+			<div class ="box2">
+			
+				<div class = "s-box">
+					
+					<label class="left" for="male">남자
+						<input type="radio" name="male" id="male"/>
+					</label>
+					
+					<label class="right" for="female">여자
+						<input type="radio" name="female" id="female"/>
+					</label>
+				</div>
+			</div>
+			<div class ="box3">
+				<div class="birth">
+					<div class="b"><span class="c">생일<span></div>
+					<div class="b-left"><input type = "text" name="year" class="year c-left" placeholder="년" maxlength="4"/></div>
+					<div class = "b-left">
+						<select class="month c-left">
+							<option>월</option>
+							<option>1</option><option>2</option><option>3</option><option>4</option>
+							<option>5</option><option>6</option><option>7</option><option>8</option>
+							<option>9</option><option>10</option><option>11</option><option>12</option>
+						</select>
+					</div>
+					<div class="b-left"><input type = "text" name="date" class="date c-left" placeholder="일" maxlength="2"/></div>
+				</div>
+				<div class="condition-birth">.<div>
+			</div>
+		</div>
+		</div>
+		<div class= "sub-large-box">
+			<div class ="box2">		
+				<div class = "sub-box">				
+					<input type="submit" class="sub"/ value="작성완료">			
+					<input type="submit" class="cancel" value="취소"/>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class = "footer">
+	</div>
+</div>
+ </body>
+</html>

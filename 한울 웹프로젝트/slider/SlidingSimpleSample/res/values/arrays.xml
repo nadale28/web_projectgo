@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner1">
+        
+        <item>사회과학</item>
+        <item>문학소설</item>
+        <item>판타지</item>
+        
+    </string-array>
+</resources>

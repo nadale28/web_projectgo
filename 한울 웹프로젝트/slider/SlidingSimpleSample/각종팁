@@ -1,0 +1,15 @@
+1.Font Style 적용방법
+  -> ttf파일을 다운 받은 후 asset에다가 넣는다
+  -> oncreat()에 소스를 추가한다=>.setTypeface(Typeface.createFromAsset(getAssets(),"ttf파일명"));
+2.수정사항
+  -dbHelper 에 current_page 추가
+  -dbms 에 dataselect 수정
+  -book_info current_page.
+  -겟터 셋텉 추가
+  -detailActivity
+  
+  12/6 오류
+ 1.같은이름의 책은 모두 같이 적용된다. 삭제, 변경 등등
+ 2.책장이동이 구현이 되어있지 않다
+ 3.sub_search에서 뒤로가면 앱이 종료된다.
+  

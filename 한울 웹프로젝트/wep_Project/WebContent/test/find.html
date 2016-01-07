@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+
+<style>
+	*{margin:0px; padding:5px;  }
+	.wrap{background:#ffffff; width:780px; height:580px; border: 0.5px solid #000000;font-size:13px; padding:30px 40px 40px 40px; margin:0 auto;} 
+	.line{border-bottom:1px solid #000}
+</style>
+
+ <body>
+
+	<div class="wrap">
+
+		<div id="container">
+		
+			<div id="content" class="conWrap">
+				<div class="headline" style="margin-bottom:30px">
+					<h1>아이디 / 비밀번호 찾기</h1>
+				</div>
+
+
+				<div class="id" >
+
+					<form method = "post" action = "cus_searchId.do">
+						
+							<h3 style="margin-bottom:10px; border-bottom:1px solid orangered">아이디 찾기</h3>
+								<table class="board4" >
+						
+									<tbody><tr>
+										<td colspan="2">
+											
+										</td>
+									</tr>
+									<tr class="line">
+										<td >이름</td>
+										<td><input type="text" name="user_nm" maxlength="50" id="user_nm"  style="ime-mode:active; width:300px;" ></td>
+									</tr>
+									<tr class="_number1">
+										<td>주민등록 번호</td>
+										<td>
+											<input type = "text" name = "jumin1" size = "7" maxlength = "6" style="width:130px;" > - 
+											<input type = "text" name = "jumin2" size = "7" maxlength = "7" style="width:140px;">
+										</td>
+
+									</tbody>
+								</table>
+								<input type = "button" value = "메인으로.." onclick = 
+											"javascript:window.location = 'cus_main.jsp'">
+										<input type = "submit" value = "찾기">
+					</form>
+
+				</div>
+
+
+
+
+
+				<div class="pw">
+					<form method = "post" action = "cus_searchPw.do">
+					<h3 style="margin-bottom:10px; border-bottom:1px solid orangered">비밀번호 찾기</h3>
+					<div >
+						<table >
+
+							<tbody>
+							<tr>
+								<td colspan="2">
+
+								</td>
+							</tr>
+							<tr>
+								<td>아이디</td>
+								<td><input type="text" name="id" maxlength="50" value="" style="ime-mode:inactive; width:300px"></td>
+							</tr>
+							<tr>
+								<td>주민등록 번호</td>
+								<td>	
+									<input type = "text" name = "jumin1" size = "7" maxlength = "6" style="width:130px;"> - 
+									<input type = "text" name = "jumin2" size = "7" maxlength = "7" style="width:140px;">
+								</td>
+							</tr>
+							
+							</tbody>
+						</table>
+										<input type = "button" value = "메인으로.." onclick = 
+											"javascript:window.location = 'cus_main.jsp'">
+										<input type = "submit" value = "찾기">
+					</form>
+				</div>
+
+	
+		</div>
+
+	</div>
+
+ </body>
+</html>
+		

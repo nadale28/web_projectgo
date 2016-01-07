@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rootelement1>
+    <subelement>
+    subelement 요소의 값
+    </subelement>
+    <subelement>
+    두번째 subelement 요소의 값
+    <subsubelement>
+        두번째 subelement 의 subsubelement 요소의 값
+    </subsubelement>
+    </subelement>
+</rootelement1>

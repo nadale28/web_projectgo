@@ -1,0 +1,11 @@
+<%@ page contentType = "text/html; charset=euc-kr" %>
+<%@ include file = "../view/cus_color.jsp" %>
+
+<html>
+<body bgcolor = "<%= bodyback_c %>">
+
+<a href = "cus_modifyForm.jsp">Á¤º¸¼öÁ¤</a>
+<a href = "cus_deleteForm.jsp">Å»Åð</a>
+
+</body>
+</html>

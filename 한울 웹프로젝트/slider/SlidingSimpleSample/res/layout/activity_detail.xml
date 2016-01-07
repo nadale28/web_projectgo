@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFACD"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context="com.book.test1122.DetailActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:background="#FFFff0"
+        android:layout_marginTop="10dp"
+         >
+
+        <ImageView
+            android:id="@+id/detail_img1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp" >
+
+            <TextView
+                android:id="@+id/detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/detail_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp"
+                android:textColor="#b8860b" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/seekbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout2"
+        android:background="#FFFff0"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_marginTop="10dp" >
+
+        <Button
+            android:id="@+id/page_input_button"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#899999"
+            android:text="총페이지를 입력하세요[Click]"
+            android:textSize="15sp"
+            android:textColor="#d3d3d3"
+             />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10px" />
+
+        <TextView
+            android:id="@+id/seek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="12sp"
+            android:textColor="#b8860b" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/grade_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_marginTop="10dp"
+         android:background="#fffff0">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#899999"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="평점을 입력해주세요"
+            android:textColor="#d3d3d3"
+            
+            android:textSize="15sp" />
+
+        <RatingBar
+            android:id="@+id/detail_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:numStars="5" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/dt_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/seekbar_layout" >
+    </ListView>
+
+</RelativeLayout>

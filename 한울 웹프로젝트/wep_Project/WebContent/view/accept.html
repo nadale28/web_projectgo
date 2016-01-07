@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <style>
+	#header{
+		text-align:center;
+		margin-top:20%;
+		border-bottom:1px solid orange;
+	}
+	#message{
+		text-align:center;
+		font-size:20px;
+	}
+	.hover {
+		margin:20px auto; 
+		background-color:#999;  
+		text-align:center; transition:all 0.8s, color 0.3s 0.3s;  
+		color:#504f4f; cursor: pointer;  
+		padding:10px 15px;
+		border-radius:5px;
+		border:0px;
+	}
+	.hover:hover{
+		color:#fff;
+	}
+
+  	.effect3:hover{
+		box-shadow:0 150px 0 0 rgba(0,0,0,0.75) inset;
+		}
+  </style>
+ </head>
+ <body>
+  <h1 id="header">결제완료<h1>
+  <p id="message">결제가 완료되었습니다</p>
+  <div align="center">
+  <a href="main.do"><input class="hover effect3" type="button" value="뒤로가기"/></a>
+  </div>
+ </body>
+</html>
